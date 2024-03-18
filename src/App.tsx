@@ -4,11 +4,11 @@ const CounterApp: React.FC = () => {
   const [count, setCount] = useState<number>(0);
 
   const increment = () => {
-    setCount(prevCount => prevCount + 1);
+    setCount((prevCount) => prevCount + 1);
   };
 
   const decrement = () => {
-    setCount(prevCount => prevCount - 1);
+    setCount((prevCount) => prevCount - 1);
   };
 
   return (
