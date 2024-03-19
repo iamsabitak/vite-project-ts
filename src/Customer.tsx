@@ -1,12 +1,11 @@
 import React from "react";
-
-interface DETPROPS {
+interface IPROPS {
   name: string;
   email: string;
   age: number;
 }
 
-const Customer: React.FC<DETPROPS> = ({ name, email, age }) => {
+const Customer: React.FC<IPROPS> = ({ name, email, age }) => {
   return (
     <>
       <h1>Customer Details</h1>
