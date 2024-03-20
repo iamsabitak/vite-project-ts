@@ -3,7 +3,16 @@ import React, { useState, useMemo, useCallback } from "react";
 const MemoizationExample: React.FC = () => {
   const [count, setCount] = useState<number>(0);
 
+  const greet = () => {
+    console.log("Hello");
+    setCount(count + 1);
+  };
   // Example of useMemo
+  //   const doubleCount = () => {
+  //     console.log("Calculating doubleCount");
+
+  //     return count * 2;
+  //   };
   const doubleCount = useMemo(() => {
     console.log("Calculating doubleCount");
     return count * 2;
@@ -20,6 +29,8 @@ const MemoizationExample: React.FC = () => {
       <h1>Count: {count}</h1>
       <h2>Double Count: {doubleCount}</h2>
       <button onClick={incrementCount}>Increment Count</button>
+
+      <button onClick={greet}>Hello</button>
     </div>
   );
 };
