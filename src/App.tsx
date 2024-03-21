@@ -8,10 +8,12 @@ import FetchApi from "./components/FetchApi";
 
 import { UserProvider } from "./context/UserContext";
 import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 const App: React.FC = () => {
   return (
     <UserProvider>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/fetchapi" element={<FetchApi />} />
