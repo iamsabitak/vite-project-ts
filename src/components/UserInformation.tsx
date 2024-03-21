@@ -6,23 +6,23 @@ const UserInformation: React.FC = () => {
   return (
     <>
       <h1>userInformation</h1>
-      <table>
+      <table className="table">
         <thead>
           <tr>
-            <td>Name</td>
-            <td>UserName</td>
-            <td>Email</td>
-            <td>Address</td>
+            <td scope="col">Name</td>
+            <td scope="col">UserName</td>
+            <td scope="col">Email</td>
+            <td scope="col">Address</td>
           </tr>
         </thead>
 
         <tbody>
           {user.map((user) => (
             <tr key={user.id}>
-              <td>{user.username}</td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.address.street}</td>
+              <td scope="col">{user.username}</td>
+              <td scope="col">{user.name}</td>
+              <td scope="col">{user.email}</td>
+              <td scope="col">{user.address.street}</td>
             </tr>
           ))}
         </tbody>
