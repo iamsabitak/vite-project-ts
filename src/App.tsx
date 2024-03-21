@@ -1,8 +1,8 @@
 import React from "react";
 // import Counter from "./components/Counter";
 // import Customer from "./components/Customer";
-import Login from "./components/Login";
-import MemoizationExample from "./components/MemoizationExample";
+// import Login from "./components/Login";
+// import MemoizationExample from "./components/MemoizationExample";
 import FetchApi from "./components/FetchApi";
 
 const App: React.FC = () => {
