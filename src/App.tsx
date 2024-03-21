@@ -14,15 +14,15 @@ const App: React.FC = () => {
     <UserProvider>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/" element={<FetchApi />} />
-        <Route path="/" element={<Counter />} />
+        <Route path="/fetchapi" element={<FetchApi />} />
+        <Route path="/counter" element={<Counter />} />
         <Route
-          path="/"
+          path="/customer"
           element={
             <Customer name="peter" email="sabitakhadka091@gmail.com" age={10} />
           }
         />
-        <Route path="/" element={<MemoizationExample />} />
+        <Route path="/memoizationexample" element={<MemoizationExample />} />
       </Routes>
     </UserProvider>
   );
