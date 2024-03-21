@@ -2,7 +2,10 @@ import { useContext } from "react";
 import { UserContext } from "./UserContext";
 
 function useUserContext() {
-  const useUserContextGlobally = useContext(UserContext);
-  return useUserContextGlobally;
+  const context = useContext(UserContext);
+  if (!context) {
+    throw new Error("useMovieContext must be used within a MovieProvider");
+  }
+  return context;
 }
 export default useUserContext;
