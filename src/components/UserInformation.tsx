@@ -1,11 +1,8 @@
 import React from "react";
-import { IState } from "./FetchApi";
+import useUserContext from "../context/useUserContext";
 
-interface Iprop {
-  user: IState[];
-}
-
-const UserInformation: React.FC<Iprop> = ({ user }) => {
+const UserInformation: React.FC = () => {
+  const { user } = useUserContext();
   return (
     <>
       <h1>userInformation</h1>
