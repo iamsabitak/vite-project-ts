@@ -13,7 +13,7 @@ import Navbar from "./components/Navbar";
 const App: React.FC = () => {
   return (
     <UserProvider>
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<FetchApi />} />
