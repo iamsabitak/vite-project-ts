@@ -15,8 +15,8 @@ const App: React.FC = () => {
     <UserProvider>
       <Navbar/>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/fetchapi" element={<FetchApi />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<FetchApi />} />
         <Route path="/counter" element={<Counter />} />
         <Route
           path="/customer"
