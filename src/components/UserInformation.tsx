@@ -1,5 +1,6 @@
 import React from "react";
 import useUserContext from "../context/useUserContext";
+import { Link } from "react-router-dom";
 
 const UserInformation: React.FC = () => {
   const { user } = useUserContext();
@@ -19,10 +20,12 @@ const UserInformation: React.FC = () => {
         <tbody>
           {user.map((user) => (
             <tr key={user.id}>
-              <td scope="col">{user.username}</td>
+              <Link to={`singleuser/${user.id}`}>
+                <td scope="col">{user.username}</td>
+              </Link>
               <td scope="col">{user.name}</td>
               <td scope="col">{user.email}</td>
-              <td scope="col">{user.address.street}</td>
+              <td scope="col">{user.address.city}</td>
             </tr>
           ))}
         </tbody>
