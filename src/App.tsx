@@ -9,6 +9,7 @@ import FetchApi from "./components/FetchApi";
 import { UserProvider } from "./context/UserContext";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import SingleUser from "./components/SingleUser";
 
 const App: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const App: React.FC = () => {
           }
         />
         <Route path="/memoizationexample" element={<MemoizationExample />} />
+        <Route path="/singleUser" element={<SingleUser />} />
       </Routes>
     </UserProvider>
   );
