@@ -13,7 +13,7 @@ export interface IState {
 }
 
 const FetchApi: React.FC = () => {
-  const { user, setUser } = useUserContext();
+  const { setUser } = useUserContext();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,7 +37,7 @@ const FetchApi: React.FC = () => {
   return (
     <>
       <h1>FetchApi</h1>
-      <UserInformation user={user} />
+      <UserInformation />
     </>
   );
 };
