@@ -5,7 +5,7 @@ interface Iprop {
   user: IState[];
 }
 
-const UserInformation: React.FC<Iprop> = ({user}) => {
+const UserInformation: React.FC<Iprop> = ({ user }) => {
   return (
     <>
       <h1>userInformation</h1>
