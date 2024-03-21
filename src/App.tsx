@@ -3,6 +3,7 @@ import React from "react";
 // import Customer from "./Customer";
 import Login from "./Login";
 import MemoizationExample from "./MemoizationExample";
+import FetchApi from "./FetchApi";
 
 const App: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const App: React.FC = () => {
       {/* <Customer name="peter" email="sabitakhadka091@gmail.com" age={10} /> */}
       <Login />
       <MemoizationExample />
+      <FetchApi/>
     </div>
   );
 };
