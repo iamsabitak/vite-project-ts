@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import UserInformation from "./UserInformation";
 
-interface IState {
+export interface IState {
   id: number;
   name: string;
   email: string;
@@ -26,27 +27,7 @@ const FetchApi: React.FC = () => {
   return (
     <>
       <h1>FetchApi</h1>
-      <table>
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>UserName</td>
-            <td>Email</td>
-            <td>Address</td>
-          </tr>
-        </thead>
-
-        <tbody>
-          {user.map((user) => (
-            <tr key={user.id}>
-              <td>{user.username}</td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.address.street}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <UserInformation user={user} />
     </>
   );
 };
