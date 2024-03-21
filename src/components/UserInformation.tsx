@@ -6,26 +6,22 @@ const UserInformation: React.FC = () => {
   const { user } = useUserContext();
   return (
     <>
-      <h1>userInformation</h1>
-      <table className="table">
+      <h1>User Information</h1>
+      <table className="table border-primary">
         <thead>
           <tr>
-            <td scope="col">Name</td>
-            <td scope="col">UserName</td>
-            <td scope="col">Email</td>
-            <td scope="col">Address</td>
+            <th scope="col">UserName</th>
+            <th scope="col">Email</th>
           </tr>
         </thead>
 
         <tbody>
           {user.map((user) => (
             <tr key={user.id}>
-              <Link to={`singleuser/${user.id}`}>
-                <td scope="col">{user.username}</td>
-              </Link>
-              <td scope="col">{user.name}</td>
-              <td scope="col">{user.email}</td>
-              <td scope="col">{user.address.city}</td>
+              <td>
+                <Link to={`singleuser/${user.id}`}>{user.name}</Link>
+              </td>
+              <td>{user.email}</td>
             </tr>
           ))}
         </tbody>
@@ -33,4 +29,5 @@ const UserInformation: React.FC = () => {
     </>
   );
 };
+
 export default UserInformation;
