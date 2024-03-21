@@ -11,7 +11,7 @@ export interface IState {
   email: string;
   username: string;
   address: {
-    street: string;
+    city: string;
   };
 }
 
