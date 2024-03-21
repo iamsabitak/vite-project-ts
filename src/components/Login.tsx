@@ -23,25 +23,51 @@ const Login: React.FC = () => {
     <>
       <h1>Login Form</h1>
       <form onSubmit={onHandleSubmit}>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email Address"
-          value={inputValue.email}
-          onChange={handleChange}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Password"
-          value={inputValue.password}
-          onChange={handleChange}
-        />
-        <button type="submit">submit</button>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">
+            Email address
+          </label>
+          <input
+            type="email"
+            className="form-control"
+            placeholder="Email Address"
+            id="email"
+            name="email"
+            aria-describedby="emailHelp"
+            value={inputValue.email}
+            onChange={handleChange}
+          />
+          <div id="emailHelp" className="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="password" className="form-label">
+            Password
+          </label>
+          <input
+            type="password"
+            className="form-control"
+            id="password"
+            name="password"
+            placeholder="Password"
+            value={inputValue.password}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3 form-check">
+          <input
+            type="checkbox"
+            className="form-check-input"
+            id="exampleCheck1"
+          />
+          <label className="form-check-label" htmlFor="exampleCheck1">
+            Check me out
+          </label>
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
       </form>
     </>
   );
