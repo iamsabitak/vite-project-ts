@@ -26,7 +26,7 @@ const App: React.FC = () => {
           }
         />
         <Route path="/memoizationexample" element={<MemoizationExample />} />
-        <Route path="/singleUser" element={<SingleUser />} />
+        <Route path="/singleUser/:id" element={<SingleUser />} />
       </Routes>
     </UserProvider>
   );
