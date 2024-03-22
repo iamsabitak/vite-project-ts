@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CleanUp from "./CleanUpFunc";
 
 const Counter: React.FC = () => {
   const [count, setCount] = useState<number>(0);
@@ -17,6 +18,7 @@ const Counter: React.FC = () => {
       <p>Count: {count}</p>
       <button onClick={increment}>Increment</button>
       <button onClick={decrement}>Decrement</button>
+      <CleanUp />
     </div>
   );
 };
