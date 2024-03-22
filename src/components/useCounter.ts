@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 function useCustom() {
-  const [counter, setCounter] = useState(0);
+    const [count, setCount] = useState<number>(0);
 
   const addOne = () => {
-    setCounter(counter + 1);
+    setCount(count + 1);
   };
   const minusOne = () => {
-    setCounter(counter - 1);
+    setCount(count - 1);
   };
 
   return [counter, addOne, minusOne];
