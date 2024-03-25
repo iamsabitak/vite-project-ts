@@ -1,4 +1,5 @@
 import React from "react";
+import AddTodo from "../todo/addTodo";
 interface IPROPS {
   name: string;
   email: string;
@@ -12,6 +13,8 @@ const Customer: React.FC<IPROPS> = ({ name, email, age }) => {
       <h3>Name:{name}</h3>
       <h3>Email:{email}</h3>
       <h3>Age:{age}</h3>
+
+      <AddTodo />
     </>
   );
 };
