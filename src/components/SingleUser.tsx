@@ -3,9 +3,10 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { IState } from "../context/UserContext";
 
+type UPARAM = { id: string };
 const SingleUser: React.FC = () => {
   const [user, setUser] = useState<IState | null>();
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams<UPARAM>();
 
   useEffect(() => {
     const fetchData = async () => {
