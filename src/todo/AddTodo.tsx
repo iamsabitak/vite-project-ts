@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 interface Todo {
-  todo: string;
+  id: number;
+  text: string;
 }
 
 const AddTodo: React.FC = () => {
-  const [name, setName] = useState<string>('');
+  const [name, setName] = useState<string>("");
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,12 +14,18 @@ const AddTodo: React.FC = () => {
   };
 
   const addTodoHandler = () => {
-    setTodos([...todos, { todo: name }]);
-    setName(''); 
+    const newTodo: Todo = {
+      id: Date.now(),
+      text: name,
+    };
+    setTodos([...todos, newTodo]);
+    setName("");
   };
 
   const removeTodoHandler = (index: number) => {
-    setTodos(prevTodos => prevTodos.filter((_, itemIndex) => itemIndex !== index));
+    setTodos((prevTodos) =>
+      prevTodos.filter((_, itemIndex) => itemIndex !== index)
+    );
   };
 
   return (
@@ -27,7 +34,7 @@ const AddTodo: React.FC = () => {
       <input
         type="text"
         name="name"
-        placeholder="Enter your Todo"
+        placeholder="Todo"
         value={name}
         onChange={onChangeHandler}
       />
@@ -35,8 +42,8 @@ const AddTodo: React.FC = () => {
       <div>
         {todos.map((item, index) => {
           return (
-            <div key={index}>
-              <h1>{item.todo}</h1>
+            <div key={item.id}>
+              <h1>{item.text}</h1>
               <button onClick={() => removeTodoHandler(index)}>Remove</button>
             </div>
           );
@@ -45,4 +52,5 @@ const AddTodo: React.FC = () => {
     </>
   );
 };
+
 export default AddTodo;
