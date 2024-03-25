@@ -11,8 +11,8 @@ const CleanUp: React.FC = () => {
     };
     document.addEventListener("click", greet);
     return () => {
-      // console.log("l1");
       document.removeEventListener("click", greet);
+      console.log("removed");
     };
   }, [count]);
   return (
