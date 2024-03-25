@@ -1,10 +1,10 @@
 import React from "react";
 
-const addTodo: React.FC = () => {
+const AddTodo: React.FC = () => {
   return (
     <>
       <h1>AddTodo</h1>
     </>
   );
 };
-export default addTodo;
+export default AddTodo;

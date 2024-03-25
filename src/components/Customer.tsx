@@ -1,5 +1,5 @@
 import React from "react";
-import AddTodo from "../todo/addTodo";
+import AddTodo from "../todo/AddTodo";
 interface IPROPS {
   name: string;
   email: string;
