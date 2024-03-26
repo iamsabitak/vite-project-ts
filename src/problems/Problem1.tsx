@@ -29,7 +29,7 @@ const Problem1: React.FC = () => {
 
   const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCountry(e.target.value);
-    setSelectedCity(0); 
+    setSelectedCity(0);
   };
 
   const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
