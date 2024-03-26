@@ -1,12 +1,15 @@
-import React from "react";
-interface COUNTRIES {
+import React, { useState } from "react";
+
+interface Country {
   name: string;
   value: string;
   cities: string[];
 }
 
 const Problem1: React.FC = () => {
-  const countries: COUNTRIES[] = [
+  const [selectedCountry, setSelectedCountry] = useState<number | string>(0);
+  const [selectedCity, setSelectedCity] = useState<number | string>(0);
+  const countries: Country[] = [
     {
       name: "USA",
       value: "US",
@@ -23,13 +26,36 @@ const Problem1: React.FC = () => {
       cities: ["Paris", "Marseille", "Lyon"],
     },
   ];
+
+  const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCountry(e.target.value);
+    setSelectedCity(0); 
+  };
+
+  const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCity(e.target.value);
+  };
+
   return (
-    <h1>
-      Problem{" "}
-      {countries.map((item) => {
-        return <li>{item.name}</li>;
-      })}
-    </h1>
+    <>
+      {/* 1st dropdown */}
+      <select onChange={handleCountryChange} value={selectedCountry}>
+        {countries.map((item, index) => (
+          <option value={index} key={item.name}>
+            {item.name}
+          </option>
+        ))}
+      </select>
+      {/* 2nd dropdown */}
+      <select onChange={handleCityChange} value={selectedCity}>
+        {countries[Number(selectedCountry)]?.cities.map((item, index) => (
+          <option value={index} key={item}>
+            {item}
+          </option>
+        ))}
+      </select>
+    </>
   );
 };
+
 export default Problem1;
