@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Popup from "../components/Popup";
 
 interface Todo {
   id: number;
@@ -50,7 +49,6 @@ const AddTodo: React.FC = () => {
           );
         })}
       </div>
-      <Popup/>
     </>
   );
 };
