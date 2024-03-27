@@ -14,9 +14,19 @@ const Login: React.FC = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue({ ...inputValue, [event.target.name]: event.target.value });
   };
-  const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+  const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (
+    event
+  ) => {
     event.preventDefault();
-    console.log(inputValue);
+    const res = await fetch("https://jsonplaceholder.typicode.com/users", {
+      method: "POST", // or "PUT", "DELETE", etc. depending on your API endpoint requirements
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(inputValue),
+    });
+    const data = await res.json();
+    console.log(data);
   };
 
   return (
