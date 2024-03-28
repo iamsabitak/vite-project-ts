@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useCallback } from "react";
+import Stepperr from "./Stepperr";
 
 const MemoizationExample: React.FC = () => {
   const [count, setCount] = useState<number>(0);
@@ -31,6 +32,7 @@ const MemoizationExample: React.FC = () => {
       <button onClick={incrementCount}>Increment Count</button>
 
       <button onClick={greet}>Hello</button>
+      <Stepperr />
     </div>
   );
 };
