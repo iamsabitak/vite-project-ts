@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import UserInformation from "./UserInformation";
+// import UserInformation from "./UserInformation";
 import useUserContext from "../context/useUserContext";
+import SelectComponent from "./SelectCOmponent";
 
 const FetchApi: React.FC = () => {
   const { setUser } = useUserContext();
@@ -21,8 +22,9 @@ const FetchApi: React.FC = () => {
   }, [setUser]);
   return (
     <>
-      <h1>FetchApi</h1>
-      <UserInformation />
+      {/* <h1>FetchApi</h1> */}
+      {/* <UserInformation /> */}
+      <SelectComponent />
     </>
   );
 };
